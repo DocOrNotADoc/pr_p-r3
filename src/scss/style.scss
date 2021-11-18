@@ -1,0 +1,127 @@
+h1 {
+  margin: 0;
+  text-align: center;
+  margin-top: 35px;
+}
+.translate {
+  margin-top: 23px;
+  &-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    gap: 20px;
+  }
+  &-value {
+
+  }
+}
+.table {
+  margin-top: 20px;
+  background-color: #fff;
+  &-wrapper {
+    display: grid;
+    grid-template-rows: 50px repeat(3, 300px);
+    justify-content: center;
+    margin: 0 auto;
+    width: fit-content;
+    background-color: #c6c8b5;
+    border: 2px solid #c6c8b5;
+    border-radius: 7px;
+    gap: 2px;
+  }
+  &-row {
+    display: grid;
+    grid-template-columns: repeat(3, 300px) 50px;
+    gap: 2px;
+  }
+  &-cell {
+    background-color: #f9fbe7;
+  }
+}
+.ttl {
+  &-table {
+    &-row, &-col {
+      text-align: center;
+      font-weight: 700;
+      background-color: #f9fbe7;
+    }
+  }
+}
+.btlr {
+  border-top-left-radius: 7px;
+}
+.btrr {
+  border-top-right-radius: 7px;
+}
+.bbrr {
+  border-bottom-right-radius: 7px;
+}
+.bblr {
+  border-bottom-left-radius: 7px;
+}
+
+
+
+.cell {
+  display: flex;
+  justify-content: space-around;
+  // min-width: 300px;
+  // max-width: 300px;
+  // height: 300px;
+  background-color: #f9fbe7;
+  border-radius: 7px;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.col-divided {
+  display: flex;
+  flex-direction: column;
+}
+.pers-all {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-right: 25px;
+  /* margin-left: -25px; */
+}
+.pers-first {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 66%;
+}
+.pers-third {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 34%;
+}
+.accolada-rght {
+  border-style: solid;
+  border-width: 0 20px 0 0;
+  border-image: url(../icons/gullbrace-right.svg) 1 20 stretch;
+}
+.accolada-left {
+  padding-left: 27px;
+  margin-left: -30px;
+  border-style: solid;
+  border-width: 0 0 0 20px;
+  border-image: url(../icons/gullbrace-left.svg) 1 20 stretch;
+  /* make left acc! */
+}
+.less-ml {
+  margin-left: -25px;
+}
+.whoWhat:first-child {
+  margin-top: 30px;
+}
+.whoWhat:last-child {
+  margin-bottom: 30px;
+}
