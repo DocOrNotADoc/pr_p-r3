@@ -1,12 +1,11 @@
 // @media (max-width: 1399px) {}
 @media (max-width: 1199px) {
   .table {
-    margin-top: 19%;
+    margin-top: 4%;
   }
 }
 @media (max-width: 991px) {
   .table {
-    margin-top: 3%;
     &-wrapper {
       grid-template-rows: repeat(3, auto);
       background-color: #fff;
@@ -58,6 +57,7 @@
 //cell
 @media (max-width: 575px) {
   .table {
+    margin-top: 3%;
     &-wrapper {
       gap: 1px;
     }
@@ -69,6 +69,8 @@
       border-radius: 7px;
     }
     &-cell {
+      border: none;
+      border-radius: 0;
       grid-column: auto;
       grid-row: auto;
       &:first-child, &:nth-child(2), &:nth-child(3) {
@@ -80,6 +82,7 @@
   .ttl {
     &-table {
       &-row {
+        border: none;
         grid-column: auto;
         border-radius: 0;
       }
