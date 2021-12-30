@@ -115,6 +115,9 @@ ul {
     }
   }
 }
+#presentAFirst {
+  grid-row: 1/3;
+}
 .ttl {
   &-table {
     &-row, &-col {
@@ -167,6 +170,9 @@ ul {
   overflow: hidden;
   clip: rect(0 0 0 0);
   border: 0;
+}
+.red {
+  color: red;
 }
 
 @import './media';
