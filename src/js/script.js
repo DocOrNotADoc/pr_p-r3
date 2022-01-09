@@ -91,31 +91,54 @@ updateWordBtn.addEventListener('click', (idx = 0) => {
     presentN = document.querySelector("#presentN"),
     pastQ = document.querySelector("#pastQ"),
     pastA = document.querySelector("#pastA"),
-    pastN = document.querySelector("#pastN");
+    pastN = document.querySelector("#pastN"),
+    idx = Math.floor(Math.random() * 11);
 
-  idx = Math.floor(Math.random() * 11);
-
+    
+    // state.presentThird => чтобы манипулировать, надо перевести в класс. Затем:
+    // if (state.word.substr(-1) !== 'e') {
+    //   state.presentThird = `${testWord}es`;
+    // }
+    // state.presentThird = `${testWord}s`;
+    // 
+    // if (state.classList === '') {
+    //   if (state.word.substr(-1) !== 'e') {
+    //     state.past = `${testWord}ed`;
+    //   }
+    //   state.past = `${testWord}d`;
+    // }
+      
   const state = statesArray[idx];
-  // console.log(state);
+
 
   const irregularVerbsMainInTable = [futureQ, futureA, futureN, presentQ, presentAFirst, presentN],
     regularVerbsMainInTable = [...irregularVerbsMainInTable, pastQ, pastN],
-    // regularVerbsThirdInTable = [presentAThird],
+    // allVerbsThirdInTable = [presentAThird],
     // regularVerbsPastInTable = [pastA],
-    irregularVerbsPastInTable = [pastQ, pastA, pastN];
+    irregularVerbsPastInTable = [pastQ, pastA, pastN],
+    irregularVerbsPaint = [...irregularVerbsMainInTable, presentAThird, ...irregularVerbsPastInTable];
+      
+    paintWord = () => {
+      irregularVerbsPaint.forEach(item => item.className = state.classList);
+    }
 
-  // Далее надо будет зафигачить innerHTTML глаголы. 
-  // Сначала Test
-  // Потом regular
-  // Потом irregular, и разобраться со словом перед whowhat
+    if (state.classList === 'red') {
+      irregularVerbsMainInTable.forEach(item => item.textContent = state.word);
+      presentAThird.textContent = state.presentThird;
+      irregularVerbsPastInTable.forEach(item => item.textContent = state.past);
+      paintWord();
+    }
 
-  // => если неправильный, добавлять opasity .3 и перечёркивать слово перед whowhat
-  // там ведь так и надо???
+    if (state.classList === '') {
+      regularVerbsMainInTable.forEach(item => item.textContent = state.word);
+      presentAThird.textContent = state.presentThird;
+      pastA.textContent = state.past;
+      paintWord();
+    }
 
-  const irregularVerbsPaint = [futureQ, futureA, futureN, presentQ, presentAFirst, presentAThird, presentN, pastQ, pastA, pastN];
+
+  // 1. Проверить, надо ли зачёркивать слово перед указанием кто, если прошедшее время вопр. Форма. И надо ли заменять did на do в этом случае?(негатив)
+  // 2. Сделать стейт классом. Это оптимизирует код. И менять содержимое, беря из псевдо-АПИ.
+
   
-  paintWord = () => {
-    irregularVerbsPaint.forEach(item => item.className = state.classList);
-  }
-  paintWord();
 })
