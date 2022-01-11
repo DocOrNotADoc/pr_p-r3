@@ -120,22 +120,13 @@ updateWord = () => {
   //   }
   // }
 
-  switch (state.classes) {
-    case  '':
-      irregularVerbsMainInTable.forEach(item => item.textContent = state.word);
-      presentAThird.textContent = state.presentThird;
-      irregularVerbsPastInTable.forEach(item => item.textContent = state.past);
-      paintWord();
-      break;
-    case 'red':
-      regularVerbsMainInTable.forEach(item => item.textContent = state.word);
-      presentAThird.textContent = state.presentThird;
-      pastA.textContent = state.past;
-      paintWord();
-      break;
-    default:
-      console.log("Ooops...");
+  changeCurrentWord = () => {
+    regularVerbsMainInTable.forEach(item => item.textContent = state.word);
+    presentAThird.textContent = state.presentThird;
+    pastA.textContent = state.past;
+    paintWord();
   }
+  changeCurrentWord();
 }
 updateWord();
 
