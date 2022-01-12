@@ -125,26 +125,59 @@ updateWord = () => {
   }
   changeCurrentWord();
 
+  // calc scroll width
+  calcScroll = () => {
+    let div = document.createElement('div');
+
+    div.style.width = '50px';
+    div.style.height = '50px';
+    div.style.overflowY = 'scroll';
+    div.style.visibility = 'hidden';
+
+    document.body.appendChild(div);
+    let getScrollbarWidth = div.offsetWidth - div.clientWidth;
+    div.remove();
+
+    return getScrollbarWidth;
+  }
+
+  const hideScroll = () => {
+    const scrollWidth = `${calcScroll()}px`;
+  
+    document.body.style.paddingRight = scrollWidth;
+    document.body.style.overflow = 'hidden';
+  }
+  const showScroll = () => {
+    document.body.style.paddingRight = '';
+    document.body.style.overflow = 'visible';
+  }
+
   allVerbs.forEach(
     (item => item.addEventListener('click', e => {
-      popupShow.style.display = 'block';
+      popupShow.classList.add('active');
+      hideScroll();
     }))
   )
+  closeModal = () => {
+    popupShow.classList.remove('active');
+    showScroll();
+  }
+  
+
   popupShow.addEventListener('click', e => {
     if (e.target === popupShow) {
-      popupShow.style.display = 'none';
+      closeModal();
     }
   })
   popupCloseBtn.addEventListener('click', e => {
-      popupShow.style.display = 'none';
+    closeModal();
   })
+  window.addEventListener('resize', closeModal);
 
 }
 updateWord();
 
 updateWordBtn.addEventListener('click', e => updateWord());
 
-// 1. Scroll-lock, when popup active
-// 2. Auto-close popup, when resize
-// 3. Auto-padding-right, when popup active
-// 4. Array TOP-100 and math.random to 100!!!
+
+// 1. Array TOP-100 and math.random to 100!!!
