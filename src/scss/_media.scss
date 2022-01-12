@@ -3,6 +3,9 @@
   .table {
     margin-top: 4%;
   }
+  #updateWordBtn {
+    top: 75%;
+  }
 }
 @media (max-width: 991px) {
   .table {
@@ -48,6 +51,9 @@
         border-radius: 7px;
       }
     }
+  }
+  #updateWordBtn {
+    top: 43%;
   }
 }
 // tab
@@ -100,5 +106,8 @@
       border-top-right-radius: 7px;
       border-top-left-radius: 7px;
     }
+  }
+  #updateWordBtn {
+    top: 7%;
   }
 }
