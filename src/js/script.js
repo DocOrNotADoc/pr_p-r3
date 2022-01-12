@@ -93,16 +93,17 @@ updateWord = () => {
   pastQ = document.querySelector("#pastQ"),
   pastA = document.querySelector("#pastA"),
   pastN = document.querySelector("#pastN"),
+  popupShow = document.querySelector(".popup-fill"),
+  popupText = document.querySelector(".popup span"),
+  popupCloseBtn = document.querySelector(".popup button"),
   idx = Math.floor(Math.random() * 11),
   state = statesArray[idx],
   verbsMainInTable = [futureQ, futureA, futureN, presentQ, presentAFirst, presentN, pastQ, pastN],
   allVerbs = [...verbsMainInTable, presentAThird, pastA],
   lastSymbol = state.word.substr(-1);
 
-  paintWord = () => {
-    allVerbs.forEach(item => item.className = `clickable ${state.classes}`);
-  }
-
+  paintWord = () => {allVerbs.forEach(item => item.className = `clickable ${state.classes}`)}
+  
   let statePast;
   if (state.classes === 'red') {statePast = state.past}
   if (state.classes === '') {
@@ -120,12 +121,30 @@ updateWord = () => {
     presentAThird.textContent = state.presentThird;
     pastA.textContent = statePast;
     paintWord();
+    popupText.textContent = `To ${state.word} - ${state.translateRus}`;
   }
   changeCurrentWord();
+
+  allVerbs.forEach(
+    (item => item.addEventListener('click', e => {
+      popupShow.style.display = 'block';
+    }))
+  )
+  popupShow.addEventListener('click', e => {
+    if (e.target === popupShow) {
+      popupShow.style.display = 'none';
+    }
+  })
+  popupCloseBtn.addEventListener('click', e => {
+      popupShow.style.display = 'none';
+  })
+
 }
 updateWord();
 
-updateWordBtn.addEventListener('click', (e) => updateWord());
+updateWordBtn.addEventListener('click', e => updateWord());
 
-// 4. Сделать по клику на глагол всплывающее мини окошко с переводом .popup
-// 5. При клике вне окошка и на крестик закрывать его
+// 1. Scroll-lock, when popup active
+// 2. Auto-close popup, when resize
+// 3. Auto-padding-right, when popup active
+// 4. Array TOP-100 and math.random to 100!!!

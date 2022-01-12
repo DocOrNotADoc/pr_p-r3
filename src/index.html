@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Landing-page">
-    <title>Document</title>
+    <title>Petrov's table by MV</title>
     <link rel="stylesheet" href="./css/style.min.css">
 </head>
 <body>
     <h1 class="visually-hidden">Таблица Петрова</h1>
-    <button id="updateWordBtn">upd</button>
+    <button id="updateWordBtn" aria-label="update"><img src="./img/update.svg" alt="update"></button>
     <section class="table">
         <div class="table-wrapper">
             <div class='table-row ttl-cols'>
@@ -156,6 +156,15 @@
                 </div>
                 <div class="ttl-table-row bbrr cell-btr">Прошедшее</div>
             </div>
+        </div>
+    </section>
+    <section class="popup-fill">
+        <div class="popup">
+            <span>To start - начать</span>
+            <button aria-label="close">
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </section>
 
