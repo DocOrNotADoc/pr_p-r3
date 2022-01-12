@@ -1,16 +1,18 @@
 const updateWordBtn = document.querySelector("#updateWordBtn");
+
 const statesArray = [
+// classes: 'red' - неправильный глагол
   {
     word: 'start',
     presentThird: 'starts',
-    past: 'started',
+    past: '',
     classes: '',
     translateRus: 'начать'
   },
   {
     word: 'love',
     presentThird: 'loves',
-    past: 'loved',
+    past: '',
     classes: '',
     translateRus: 'любить'
   },
@@ -31,7 +33,7 @@ const statesArray = [
   {
     word: 'say',
     presentThird: 'says',
-    past: 'sayd',
+    past: 'said',
     classes: 'red',
     translateRus: 'говорить'
   },
@@ -70,15 +72,16 @@ const statesArray = [
     classes: 'red',
     translateRus: 'думать'
   },
+  //10
   {
     word: 'take',
     presentThird: 'takes',
     past: 'took',
     classes: 'red',
     translateRus: 'брать'
-  }
+  },
 ]
-// red - неправильный глагол
+
 updateWord = () => {
   const futureQ = document.querySelector("#futureQ"),
   futureA = document.querySelector("#futureA"),
@@ -92,38 +95,30 @@ updateWord = () => {
   pastN = document.querySelector("#pastN"),
   idx = Math.floor(Math.random() * 11),
   state = statesArray[idx],
-  irregularVerbsMainInTable = [futureQ, futureA, futureN, presentQ, presentAFirst, presentN],
-  regularVerbsMainInTable = [...irregularVerbsMainInTable, pastQ, pastN],
-  // allVerbsThirdInTable = [presentAThird],
-  // regularVerbsPastInTable = [pastA],
-  irregularVerbsPastInTable = [pastQ, pastA, pastN],
-  irregularVerbsPaint = [...irregularVerbsMainInTable, presentAThird, ...irregularVerbsPastInTable];
+  verbsMainInTable = [futureQ, futureA, futureN, presentQ, presentAFirst, presentN, pastQ, pastN],
+  allVerbs = [...verbsMainInTable, presentAThird, pastA],
+  lastSymbol = state.word.substr(-1);
 
   paintWord = () => {
-    irregularVerbsPaint.forEach(item => item.className = `clickable ${state.classes}`);
+    allVerbs.forEach(item => item.className = `clickable ${state.classes}`);
   }
 
-  // state.presentThird => чтобы манипулировать, надо перевести в класс. Затем:
-  // if (state.word.substr(-1) !== 'e') {
-  //   state.presentThird = `${testWord}es`;
-  // }
-  // if (state.word.substr(-1) === 'e') {
-  //   state.presentThird = `${testWord}s`;
-  // }
-  // 
-  // if (state.classes === '') {
-  //   if (state.word.substr(-1) !== 'e') {
-  //     state.past = `${testWord}ed`;
-  //   }
-  //   if (state.word.substr(-1) === 'e') {
-  //     state.past = `${testWord}d`;
-  //   }
-  // }
+  let statePast;
+  if (state.classes === 'red') {statePast = state.past}
+  if (state.classes === '') {
+    switch (lastSymbol) {
+      case 'e':
+        statePast = `${state.word}d`;
+        break;
+      default:
+        statePast = `${state.word}ed`;
+    }
+  }
 
   changeCurrentWord = () => {
-    regularVerbsMainInTable.forEach(item => item.textContent = state.word);
+    verbsMainInTable.forEach(item => item.textContent = state.word);
     presentAThird.textContent = state.presentThird;
-    pastA.textContent = state.past;
+    pastA.textContent = statePast;
     paintWord();
   }
   changeCurrentWord();
