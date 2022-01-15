@@ -429,12 +429,85 @@ const statesArray = [
   },
   // 60
   {
-    word: 'lead',
+    word: 'understand',
     presentThird: '',
-    past: 'led',
+    past: 'understood',
     classes: 'red',
-    translateRus: 'вести'
+    translateRus: 'понимать'
   },
+  {
+    word: 'watch',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'смотреть'
+  },
+  {
+    word: 'follow',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'следовать'
+  },
+  {
+    word: 'stop',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'остановиться'
+  },
+  {
+    word: 'create',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'создавать'
+  },
+
+  {
+    word: 'speak',
+    presentThird: '',
+    past: 'spoke',
+    classes: 'red',
+    translateRus: 'говорить'
+  },
+  {
+    word: 'read',
+    presentThird: '',
+    past: 'read',
+    classes: 'red',
+    translateRus: 'читать'
+  },
+  {
+    word: 'allow',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'разрешать, позволять'
+  },
+  {
+    word: 'add',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'добавлять'
+  },
+  {
+    word: 'spend',
+    presentThird: '',
+    past: 'spent',
+    classes: 'red',
+    translateRus: 'тратить, проводить, израсходовать, уделять'
+  },
+  // 70
+  {
+    word: 'spend',
+    presentThird: '',
+    past: 'spent',
+    classes: 'red',
+    translateRus: 'тратить, проводить, израсходовать, уделять'
+  },
+
 
 ]
 
@@ -452,7 +525,7 @@ updateWord = () => {
   popupShow = document.querySelector(".popup-fill"),
   popupText = document.querySelector(".popup span"),
   popupCloseBtn = document.querySelector(".popup button"),
-  idx = Math.floor(Math.random() * 60),
+  idx = Math.floor(Math.random() * 70),
   state = statesArray[idx],
   verbsMainInTable = [futureQ, futureA, futureN, presentQ, presentAFirst, presentN, pastQ, pastN],
   allVerbs = [...verbsMainInTable, presentAThird, pastA],
