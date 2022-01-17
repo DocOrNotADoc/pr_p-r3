@@ -501,13 +501,84 @@ const statesArray = [
   },
   // 70
   {
-    word: 'spend',
+    word: 'grow',
     presentThird: '',
-    past: 'spent',
+    past: 'grew',
     classes: 'red',
-    translateRus: 'тратить, проводить, израсходовать, уделять'
+    translateRus: 'расти, выращивать, отрастить, отрастать, увеличиваться'
+  },
+  {
+    word: 'open',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'открывать'
+  },
+  {
+    word: 'walk',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'ходить'
+  },
+  {
+    word: 'win',
+    presentThird: '',
+    past: 'won',
+    classes: 'red',
+    translateRus: 'выигрывать'
+  },
+  {
+    word: 'offer',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'предлагать'
   },
 
+  {
+    word: 'remember',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'помнить, вспоминать, поминать'
+  },
+  {
+    word: 'consider',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'считать, размышлять, учитывать, рассматривать, считаться'
+  },
+  {
+    word: 'appear',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'появляться, казаться, издаваться, возникать'
+  },
+  {
+    word: 'buy',
+    presentThird: '',
+    past: 'bought',
+    classes: 'red',
+    translateRus: 'покупать'
+  },
+  {
+    word: 'wait',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'ожидать, надеяться, быть готовым'
+  },
+  // 80
+  {
+    word: 'wait',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'ожидать, надеяться, быть готовым'
+  },
 
 ]
 
@@ -525,7 +596,7 @@ updateWord = () => {
   popupShow = document.querySelector(".popup-fill"),
   popupText = document.querySelector(".popup span"),
   popupCloseBtn = document.querySelector(".popup button"),
-  idx = Math.floor(Math.random() * 70),
+  idx = Math.floor(Math.random() * 80),
   state = statesArray[idx],
   verbsMainInTable = [futureQ, futureA, futureN, presentQ, presentAFirst, presentN, pastQ, pastN],
   allVerbs = [...verbsMainInTable, presentAThird, pastA],
