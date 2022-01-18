@@ -573,11 +573,39 @@ const statesArray = [
   },
   // 80
   {
-    word: 'wait',
+    word: 'serve',
     presentThird: '',
     past: '',
     classes: '',
-    translateRus: 'ожидать, надеяться, быть готовым'
+    translateRus: 'служить'
+  },
+  {
+    word: 'die',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'умирать'
+  },
+  {
+    word: 'send',
+    presentThird: '',
+    past: 'sent',
+    classes: 'red',
+    translateRus: 'отправлять, передавать'
+  },
+  {
+    word: 'expect',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'ожидать'
+  },
+  {
+    word: 'build',
+    presentThird: '',
+    past: 'built',
+    classes: 'red',
+    translateRus: 'строить, создавать, нарастать'
   },
 
 ]
