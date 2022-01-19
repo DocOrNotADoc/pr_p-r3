@@ -463,7 +463,6 @@ const statesArray = [
     classes: '',
     translateRus: 'создавать'
   },
-
   {
     word: 'speak',
     presentThird: '',
@@ -535,7 +534,6 @@ const statesArray = [
     classes: '',
     translateRus: 'предлагать'
   },
-
   {
     word: 'remember',
     presentThird: '',
@@ -607,8 +605,113 @@ const statesArray = [
     classes: 'red',
     translateRus: 'строить, создавать, нарастать'
   },
-
-]
+  {
+    word: 'stay',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'оставаться'
+  },
+  {
+    word: 'fall',
+    presentThird: '',
+    past: 'fell',
+    classes: 'red',
+    translateRus: 'падать, снижаться, перейти в какое-либо состояние'
+  },
+  {
+    word: 'cut',
+    presentThird: '',
+    past: 'cut',
+    classes: 'red',
+    translateRus: 'резать, сокращать, кроить, сокращать путь'
+  },
+  {
+    word: 'reach',
+    presentThird: 'reach / reachs',
+    past: '',
+    classes: '',
+    translateRus: 'добираться, достигать, связываться'
+  },
+  {
+    word: 'kill',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'убивать, прекращать, сильно смешить'
+  },
+  // 90
+  {
+    word: 'remain',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'оставаться, сохраняться'
+  },
+  {
+    word: 'suggest',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'подсказывать, предлагать, советовать, наводить на мысль'
+  },
+  {
+    word: 'raise',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'поднимать, повышать, собирать финансовые средства, выращивать'
+  },
+  {
+    word: 'pass',
+    presentThird: 'pass',
+    past: '',
+    classes: '',
+    translateRus: 'проходить, происходить, передавать'
+  },
+  {
+    word: 'sell',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'продавать, торговть, продаваться, убеждать'
+  },
+  {
+    word: 'require',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'требовать'
+  },
+  {
+    word: 'report',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'сообщать, представлять, жаловаться'
+  },
+  {
+    word: 'decide',
+    presentThird: 'decide / decides',
+    past: '',
+    classes: '',
+    translateRus: 'принимать решение, разрешить, определять, решить'
+  },
+  {
+    word: 'acknowledge',
+    presentThird: 'acknowledge',
+    past: '',
+    classes: '',
+    translateRus: 'сознавать'
+  },
+  {
+    word: 'realize',
+    presentThird: '',
+    past: '',
+    classes: '',
+    translateRus: 'понимать'
+  },
+  ]
 
 updateWord = () => {
   const futureQ = document.querySelector("#futureQ"),
@@ -624,7 +727,7 @@ updateWord = () => {
   popupShow = document.querySelector(".popup-fill"),
   popupText = document.querySelector(".popup span"),
   popupCloseBtn = document.querySelector(".popup button"),
-  idx = Math.floor(Math.random() * 80),
+  idx = Math.floor(Math.random() * 100),
   state = statesArray[idx],
   verbsMainInTable = [futureQ, futureA, futureN, presentQ, presentAFirst, presentN, pastQ, pastN],
   allVerbs = [...verbsMainInTable, presentAThird, pastA],
